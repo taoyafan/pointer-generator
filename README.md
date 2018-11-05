@@ -57,7 +57,11 @@ To run beam search decoding:
 ```
 python run_summarization.py --mode=decode --data_path=/path/to/chunked/val_* --vocab_path=/path/to/vocab --log_root=/path/to/a/log/directory --exp_name=myexperiment
 ```
-
+For example:
+```
+python run_summarization.py --mode=decode --data_path=../cnn-dailymail-master/finished_files/chunked/val_* --vocab_path=../cnn-dailymail-master/finished_files/vocab --log_root=../cnn-dailymail-master/log/ --exp_name=test_train
+python run_summarization.py --mode=train --data_path=../cnn-dailymail-master/finished_files/chunked/train_* --vocab_path=../cnn-dailymail-master/finished_files/vocab --log_root=../cnn-dailymail-master/log/ --exp_name=test_train
+```
 Note: you want to run the above command using the same settings you entered for your training job (plus any decode mode specific flags like `beam_size`).
 
 This will repeatedly load random examples from your specified datafile and generate a summary using beam search. The results will be printed to screen.
